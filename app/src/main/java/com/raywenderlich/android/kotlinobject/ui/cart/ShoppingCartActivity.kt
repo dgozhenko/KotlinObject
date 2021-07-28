@@ -86,6 +86,7 @@ class ShoppingCartActivity : AppCompatActivity() {
 
   private fun setupClearCartButton() {
     viewBinding.clearCartButton.setOnClickListener {
+
       ShoppingCart.clear()
     }
   }
