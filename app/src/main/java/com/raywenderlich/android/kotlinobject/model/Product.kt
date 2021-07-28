@@ -32,7 +32,7 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.kotlinobject
+package com.raywenderlich.android.kotlinobject.model
 
 import androidx.annotation.DrawableRes
 

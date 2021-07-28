@@ -13,7 +13,7 @@
       tools:ignore="GoogleAppIndexingWarning">
     <!-- Main Activity -->
     <activity
-        android:name=".MainActivity"
+        android:name=".ui.main.MainActivity"
         android:theme="@style/SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
       </intent-filter>
     </activity>
 
-    <activity android:name=".ShoppingCartActivity" />
+    <activity android:name=".ui.cart.ShoppingCartActivity" />
 
   </application>
 

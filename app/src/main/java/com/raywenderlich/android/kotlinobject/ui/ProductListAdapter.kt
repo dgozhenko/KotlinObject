@@ -32,10 +32,9 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.kotlinobject
+package com.raywenderlich.android.kotlinobject.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -43,7 +42,9 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.raywenderlich.android.kotlinobject.asPriceString
 import com.raywenderlich.android.kotlinobject.databinding.RecyclerItemProductBinding
+import com.raywenderlich.android.kotlinobject.model.Product
 
 class ProductListAdapter(
     private val onItemClick: ((position: Int) -> Unit)? = null

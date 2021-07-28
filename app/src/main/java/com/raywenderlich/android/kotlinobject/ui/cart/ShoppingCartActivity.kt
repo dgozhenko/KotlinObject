@@ -32,71 +32,51 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.kotlinobject
+package com.raywenderlich.android.kotlinobject.ui.cart
 
-import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import com.raywenderlich.android.kotlinobject.databinding.ActivityMainBinding
+import com.raywenderlich.android.kotlinobject.model.Product
+import com.raywenderlich.android.kotlinobject.ui.ProductListAdapter
+import com.raywenderlich.android.kotlinobject.databinding.ActivityShoppingCartBinding
 
-/**
- * Main Screen
- */
-class MainActivity : AppCompatActivity() {
-  private lateinit var viewBinding: ActivityMainBinding
+class ShoppingCartActivity : AppCompatActivity() {
+  lateinit var viewBinding: ActivityShoppingCartBinding
 
   private lateinit var products: List<Product>
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    // Switch to AppTheme for displaying the activity
-    setTheme(R.style.AppTheme)
-
     super.onCreate(savedInstanceState)
-
-    viewBinding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+    viewBinding = ActivityShoppingCartBinding.inflate(LayoutInflater.from(this))
     setContentView(viewBinding.root)
 
     setup()
-  }
+    setupClearCartButton()
 
-  private fun addProductToCart(product: Product) {
-    // TODO
-  }
-
-  private fun goToCart() {
-    // TODO
+    // Your code
   }
 
   private fun setup() {
     setupProducts()
     setupRecyclerView()
-    setupGoToCartButton()
   }
 
-
   private fun setupProducts() {
-    products = listOf(
-        Product(1, R.mipmap.android_sailor, getString(R.string.product_sailor), 1499),
-        Product(2, R.mipmap.android_basketball, getString(R.string.product_basketball_shirt), 1199),
-        Product(3, R.mipmap.android_design_pattern, getString(R.string.product_design_pattern),
-            899),
-        Product(4, R.mipmap.android_jacket, getString(R.string.product_jacket), 4299),
-    )
+    // TODO
+    products = emptyList()
+  }
+
+  private fun setupClearCartButton() {
+    // TODO
   }
 
   private fun setupRecyclerView() {
-    val recyclerView = viewBinding.recyclerViewProducts
-    val adapter = ProductListAdapter { position ->
-      addProductToCart(products[position])
-    }
+    val recyclerView = viewBinding.recyclerViewCartProducts
+    val adapter = ProductListAdapter()
     adapter.submitList(products)
     recyclerView.adapter = adapter
   }
 
-  private fun setupGoToCartButton() {
-    viewBinding.cartButton.setOnClickListener { goToCart() }
-  }
+  // TODO
 }
