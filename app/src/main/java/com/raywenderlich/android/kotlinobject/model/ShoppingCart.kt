@@ -3,6 +3,7 @@ package com.raywenderlich.android.kotlinobject.model
 object ShoppingCart {
 
     // private setter, so only ShoppingCart can set it value
+    @JvmStatic
     var products: List<Product> = emptyList()
     private set
 
