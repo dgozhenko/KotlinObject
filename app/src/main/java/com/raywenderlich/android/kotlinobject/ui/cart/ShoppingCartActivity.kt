@@ -85,7 +85,9 @@ class ShoppingCartActivity : AppCompatActivity() {
   }
 
   private fun setupClearCartButton() {
-    ShoppingCart.clear()
+    viewBinding.clearCartButton.setOnClickListener {
+      ShoppingCart.clear()
+    }
   }
 
   private fun setupRecyclerView() {
