@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">Smart-T-Shop</string>
+  <string name="description_product_thumbnail">Product thumbnail</string>
+  <string name="product_sailor">Sailor Outfit</string>
+  <string name="product_design_pattern">Design Pattern Shirt</string>
+  <string name="product_jacket">Really Cool-looking Jacket</string>
+  <string name="product_basketball_shirt">Basketball Jersey</string>
+  <string name="product_added_toast">Product added to cart</string>
+  <string name="button_clear_cart">Clear Cart</string>
+  <string name="button_go_to_cart">Go to cart</string>
+  <string name="text_total_price">Total: %1s</string>
+</resources>
