@@ -34,12 +34,18 @@
 
 package com.raywenderlich.android.kotlinobject.ui.cart
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.raywenderlich.android.kotlinobject.R
+import com.raywenderlich.android.kotlinobject.asPriceString
 import com.raywenderlich.android.kotlinobject.model.Product
 import com.raywenderlich.android.kotlinobject.ui.ProductListAdapter
 import com.raywenderlich.android.kotlinobject.databinding.ActivityShoppingCartBinding
+import com.raywenderlich.android.kotlinobject.model.ShoppingCart
+import com.raywenderlich.android.kotlinobject.util.ShoppingCartCalculator
 
 class ShoppingCartActivity : AppCompatActivity() {
   lateinit var viewBinding: ActivityShoppingCartBinding
@@ -63,8 +69,11 @@ class ShoppingCartActivity : AppCompatActivity() {
   }
 
   private fun setupProducts() {
-    // TODO
-    products = emptyList()
+    products = ShoppingCart.products
+
+    val calculator = ShoppingCartCalculator()
+    val totalPrice = calculator.calculateTotal()
+    viewBinding.textTotalCartValue.text = getString(R.string.text_total_price, totalPrice.asPriceString)
   }
 
   private fun setupClearCartButton() {
@@ -78,5 +87,9 @@ class ShoppingCartActivity : AppCompatActivity() {
     recyclerView.adapter = adapter
   }
 
-  // TODO
+  companion object {
+    fun newIntent(context: Context): Intent {
+      return Intent(context, ShoppingCartActivity::class.java)
+    }
+  }
 }

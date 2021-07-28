@@ -36,11 +36,14 @@ package com.raywenderlich.android.kotlinobject.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.kotlinobject.model.Product
 import com.raywenderlich.android.kotlinobject.ui.ProductListAdapter
 import com.raywenderlich.android.kotlinobject.R
 import com.raywenderlich.android.kotlinobject.databinding.ActivityMainBinding
+import com.raywenderlich.android.kotlinobject.model.ShoppingCart
+import com.raywenderlich.android.kotlinobject.ui.cart.ShoppingCartActivity
 
 /**
  * Main Screen
@@ -62,12 +65,16 @@ class MainActivity : AppCompatActivity() {
     setup()
   }
 
+  // use object for adding product to cart
   private fun addProductToCart(product: Product) {
-    // TODO
+    ShoppingCart.addProduct(product)
+    Toast.makeText(this, R.string.product_added_toast, Toast.LENGTH_SHORT).show()
   }
 
+  // use companion object for intent
   private fun goToCart() {
-    // TODO
+    val intent = ShoppingCartActivity.newIntent(this)
+    startActivity(intent)
   }
 
   private fun setup() {
